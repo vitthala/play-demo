@@ -1,0 +1,27 @@
+
+@import helper._
+
+@main("Welcome to Play") {
+
+    @helper.form(action = routes.UsersController.doLogin(), 'id -> "login-form", 'class -> "form-horizontal") {
+
+        <fieldset>
+
+            <p>
+                <label for="login-email">email</label>
+                <input type="text" id="login-email" name="email" class="round full-width-input" autofocus />
+            </p>
+
+            <p>
+                <label for="login-password">password</label>
+                <input type="password" id="login-password"  name="password" class="round full-width-input" />
+            </p>
+
+            <p>I've <a href="#">forgotten my password</a>.</p>
+
+            <input type="submit" class="button round blue image-right ic-right-arrow" value="LOG IN">
+
+        </fieldset>
+    }
+
+}

@@ -1,0 +1,3 @@
+name := "admin"
+
+version := "BUILD"

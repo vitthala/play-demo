@@ -1,0 +1,45 @@
+@(title: String, userForm: Form[User], formAction: play.api.mvc.Call, ages: Map[String, Boolean])
+@import bootstrap3._
+
+@main(title) {
+    @helper.form(action = formAction, 'class -> "form-horizontal") {
+        <fieldset>
+            <p>
+            <!-- Name -->
+            @text(userForm("name"),
+                label = "Name",
+                placeholder = "Name")
+            </p>
+
+            <p>
+            <!-- Email -->
+            @text(userForm("email"),
+                label = "Email",
+                placeholder = "Email")
+            </p>
+
+            <p>
+            <!-- Age -->
+            @select(userForm("age"),
+                label = "Age",
+                optionMap = ages,
+                isMultiple = false)
+            </p>
+
+            <p>
+            <!-- Password -->
+            @password(userForm("password"),
+                label = "Password",
+                placeholder = "")
+            </p>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button id="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                    <button id="cancel" class="btn cancel">Cancel</button>
+                </div>
+            </div>
+
+        </fieldset>
+    }
+}

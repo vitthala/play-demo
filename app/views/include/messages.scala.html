@@ -1,0 +1,12 @@
+@if(flash.containsKey("success")) {
+    <div class="information-box round text-success">
+        @flash.get("success")
+    </div>
+}
+
+@if(flash.containsKey("error")) {
+    <div class="information-box round text-danger">
+        @flash.get("error")
+    </div>
+}
+

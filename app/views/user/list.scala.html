@@ -1,0 +1,12 @@
+@(users: List[models.User])
+
+@main("List of users") {
+
+    <ul>
+        @for((user, index)  <- users.zipWithIndex) {
+            <li>
+                @{val cnt = index+1; cnt}) Name: @user.getName(), Email: <a href="@routes.UsersController.edit(user.getEmail())">@user.getEmail()</a>
+            </li>
+        }
+    </ul>
+}

@@ -1,0 +1,33 @@
+@(title: String = "Welcome to Play!")(content: Html)
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@title</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/fonts.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/style.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    <!-- Optimize for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+@include.header(title)
+
+<!-- MAIN CONTENT -->
+<div id="content">
+
+    @include.messages()
+
+    @content
+
+</div> <!-- end content -->
+
+@include.footer()
+
+</body>
+</html>
